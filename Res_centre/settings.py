@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-g8vb=x=uprc_qy(ve$cj)ux=fk9z^quk98%1d27j85*il_a=4d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','covi-resource.herokuapp.com','']
+ALLOWED_HOSTS = ['127.0.0.1','covi-resource.herokuapp.com','covid-resource-center.herokuapp.com']
 
 
 # Application definition
