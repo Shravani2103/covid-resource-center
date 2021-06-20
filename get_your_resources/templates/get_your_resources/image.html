@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Bootstrap Example</title>
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/main.css' %}"> 
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity=
+"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src=
+"https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous">
+    </script>
+  
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity=
+"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous">
+</script>
+<style>
+    article { 
+        margin: 15px; 
+    } 
+    h1 {
+        color: green;
+    }
+    .carousel-inner {
+        height: 310px;
+    }
+      
+    .item.active {
+        height: 310px!important;
+    }
+      
+    .item img {
+        object-fit: cover;
+        height: 100%!important;
+      }
+      </style>
+  </head>
+    
+  <body>
+    
+      <div class="container-fluid">
+          <div id="carousel1"
+              class="carousel slide carousel-fade"
+              data-ride="carousel" style="height:50vh">
+            
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                  <li data-target="#carousel1"
+                      data-slide-to="0"
+                      class="active"></li>
+                  <li data-target="#carousel1"
+                      data-slide-to="1"></li>
+                  <li data-target="#carousel1"
+                      data-slide-to="2"></li>
+              </ol>
+        
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <div class="view">
+                        <center><img src={% static 'images/x1.jpeg' %} alt="" height="250"></center>
+                                              <div class="mask rgba-black-light"></div>
+                                          </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        
+                                          <!-- Slideer 1 -->
+                                          <div class="view">
+                                            <center><img src={% static 'images/x2.jpeg' %} alt=""  height="250"></center>
+                                              <div class="mask rgba-black-strong"></div>
+                                          </div>
+                                      </div>
+                                      <div class="carousel-item">
+                                        
+                                          <!-- Slideer 2 -->
+                                          <div class="view">
+                                            <center><img src={% static 'images/x3.jpeg' %} alt="" width="400" height="250"></center>
+                                              <div class="mask rgba-black-slight"></div>
+                                          </div>
+                                          </div>
+                                          </div>
+                                        
+                                          <!-- Slideer 3 -->
+                                          <a class="carousel-control-prev"
+                                          href="#carousel1" role="button"
+                                          data-slide="prev">
+                                              <span class="carousel-control-prev-icon"
+                                                  aria-hidden="true"></span>
+                                              <span class="sr-only">Previous</span>
+                                          </a>
+                                          <a class="carousel-control-next"
+                                          href="#carousel1" role="button"
+                                          data-slide="next">
+                                              <span class="carousel-control-next-icon"
+                                                  aria-hidden="true"></span>
+                                              <span class="sr-only">Next</span>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </body>
+                                
+                              </html>                 

@@ -1,0 +1,35 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+
+{% include 'get_your_resources/status.html' %}
+<br>
+<div class= "row">
+    <div class = "col-md-12">
+        <hr>
+        <div class ="card card-body">
+            <a class btn btn-primary btn-sm btn-block" href="#"><center>Resource details</center></a>
+            <table class="table table-striped">
+                <tr class = "table-info">
+                    <th scope ="row"></th>
+                    <th>Resource</th>
+                    <th>Resource quantity</th>
+                    <th>Resource Availability</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+                {% for i in Hospital_resources %}
+                    <tr>
+                        <th>      </th>
+                         <th> {{i.Res_name}}</th>
+                         <th> {{i.Res_quantity}}</th>
+                         <th> {{i.Availability}}</th>
+                         <th> <a class= "btn btn-sm btn-info" href="{% url 'updateResources' i.id %}">Update</a></th>
+                         <th> <a class= "btn btn-sm btn-danger" href="{% url 'deleteH' i.id %}">Delete</a></th>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>  
+{% endblock %}

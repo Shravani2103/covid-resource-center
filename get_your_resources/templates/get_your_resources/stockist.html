@@ -1,0 +1,50 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+
+<div class = "col-md-12">
+    <hr>
+    <div class= "row">
+        <div class = "col">
+            <div class="card card-body">
+                <form method="get">
+                    {{myFilter.form}}
+
+                    <button class ="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+         </div> 
+    </div>  
+    <br>
+    <div class ="card text-center text-black wb-3">
+        <a class btn btn-primary btn-sm btn-block" href=""><center>Stockist Details</center></a>
+        <table class="table table-striped">
+            <tr class = "table-info">
+                <th scope ="row"></th>
+                <td> Details </td>
+                <th>      </th>
+                <td>Stockist Name</td>
+                <td>        </td>
+                <th>Ph_no</th>
+                <th>Email</th>
+                <th>Area</th>
+            </tr>
+            {% for s_res in S %}
+                    <tr>
+                        <th>          </th>
+                        <td><a href="{% url 's_res' s_res.id %}">View</a></td>
+                         <th> {{s_res.S_fname}}</th>
+                         <td>{{s_res.S_mname}}</td>
+                         <td>{{s_res.S_lname}}</td>
+                         <th> {{s_res.Phno}}</th>
+                         <td>{{s_res.Email_id}}</td>
+                         <th> {{s_res.Area_id}}</th>
+                    </tr>
+                    {% endfor %}
+        </table>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

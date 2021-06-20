@@ -1,0 +1,51 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class= "row">
+    <div class = "col-md-12">
+        <h2 style="color:rgb(242, 242, 247)"><center>PLASMA DONOR DETAILS</center></h2>
+        <hr>
+        <div class= "row">
+            <div class = "col">
+                <div class="card card-body">
+
+                    <form method="get">
+                        {{ myFilter.form }}
+
+                        <button class ="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+             </div> 
+        </div>  
+        <br>
+        <div class ="card card-body">
+            <a><center>Info</center></a>
+            <table class="table table-striped">
+                <tr class = "table-info">
+                    <th scope ="row"></th>
+                    <th>Donor_id</th>
+                    <th>Blood Group</th>
+                    <th>Age</th>
+                    <th>sex</th>
+                    <th>Hospital</th>
+                    <th></th>
+                </tr>
+                {% for i in plasma_donors %}
+                    <tr>
+                         <th>      </th>
+                         <th> {{i.Don_id}}</th>
+                         <th> {{i.Blood_group}}</th>
+                         <th> {{i.Don_age}}</th>
+                         <th> {{i.Sex}}</th>
+                         <th> {{i.Hospital_id}}</th>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

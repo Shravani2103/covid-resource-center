@@ -1,0 +1,59 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+<br>
+
+<div class= "row">
+    <div class = "col-md-12">
+        <h2 style="color:rgb(255, 255, 255)"><center>RESOURCES</center></h2>
+        <hr>
+        <div class= "row">
+            <div class = "col">
+                <div class="card card-body">
+
+                    <form method="get">
+                        {{myFilter.form}}
+
+                        <button class ="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+             </div> 
+        </div>  
+        <br>
+        <div class ="card text-center text-black wb-3">
+            <a><center>RESOURCE TYPE</center></a>
+            <table class="table table-striped">
+                <tr class = "table-info">
+                    <th scope ="row"></th>
+                    <th>Resource Name</th>
+                    <th>Price</th>
+                    <th>Purpose</th>
+                    <th>View details</th>
+                </tr>
+                {% for i in resources %}
+                    <tr>
+                        <th>    </th>
+                         <th> {{i.Res_name}}</th>
+                         <th> {{i.cost}}</th>
+                         <th> {{i.use}}</th>
+                         <th> <style>
+                            .hide {
+                              display: none;
+                            }
+                                
+                            .myDIV:hover + .hide {
+                              display: block;
+                              color: rgb(10, 68, 2);
+                            }
+                            </style>
+                            <div class="myDIV">Details</div>
+                            <div class="hide">Manufacturing Company:{{i.Ind_id}}<br>
+                                Manufactured quantity:{{i.Man_quantity}}</div> </th>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<a href="{% url 'createResources' %}" class="ml-2" type="button"><center>Resource add</center></a>
+{% endblock %}

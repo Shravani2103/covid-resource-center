@@ -1,0 +1,49 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+
+<br>
+<h2 style="color:rgb(229, 229, 241)"><center>PHARMACY DETAILS</center></h2>
+<div class= "row">
+    <div class = "col">
+        <div class="card card-body">
+     
+            <form method="get">
+                {{myFilter.form}}
+
+                <button class ="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+     </div> 
+</div>  
+<br>
+<div class= "row">
+    <div class = "col-md-12">
+        <hr>
+        <div class ="card text-center text-black wb-3">
+            <a><center>Pharm Details</center></a>
+            <table class="table table-striped">
+                <tr class = "table-info">
+                    <th scope ="row"></th>
+                    <td> Details</td>
+                    <th>Pharm Name</th>
+                    <th>Loc</th>
+                    <th>Ph_no</th>
+                    <th>ratings</th>
+                </tr>
+                {% for pharm_res in pharmacies %}
+                    <tr>
+                        <th>       </th>
+                       <td><a href="{% url 'pharm_res' pharm_res.id %}">View</a></td>
+                         <th> {{pharm_res.P_name}}</th>
+                         <th> {{pharm_res.Area_id}}</th>
+                         <th> {{pharm_res.P_ph_no}}</th>
+                         <th> {{pharm_res.Ratings}}</th>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

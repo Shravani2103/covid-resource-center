@@ -1,0 +1,58 @@
+<br>
+<div class="row">
+<div class="col-sm-5">    
+  <div class="card text-white bg-secondary mb-3" style="max-width: 50rem; padding:0 10px;">
+    <div class="card-header">HOSPITAL NAME</div>
+    <div class="card-body">
+      <p style="font-family:cooper black; color :rgb(0, 0, 0); font-size: 30px;">{{H_id.H_name}}</p>
+      <h4 class="card-title"></h4>
+      <p class="card-text"></p>
+    </div>
+  </div>
+</div>
+ <div class="col-sm-5">  
+    <div class="card text-white bg-dark mb-3"  style="max-width: 50rem; padding: 0 10px;">
+        <div class="card-header">SLOTS/DAY</div>
+        <div class="card-body">
+          <p>{{H_id.Shots_per_day}}</p>
+          <h4 class="card-title"></h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <hr>
+   <div class="col-sm-5">  
+      <div class="card text-white bg-success mb-3" style="max-width: 50rem; padding: 0 10px;">
+          <div class="card-header">TOTAL BEDS</div>
+         <div class="card-body">
+           <p>{{H_id.Total_beds}}</p>
+            <h4 class="card-title"></h4>
+            <p class="card-text"></p>
+         </div>
+       </div>
+    </div>
+<div class="col-sm-5">  
+    <div class="card text-white bg-primary mb-3" style="max-width: 50rem; padding: 0 10px;">
+        <div class="card-header">BEDS AVAILABLE</div>
+        <div class="card-body">
+          <p>{{H_id.Beds_avail}}</p>
+          <h4 class="card-title"></h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+<div class= "row">
+  <div class = "col-sm-12">
+      <div class="card card-body">
+
+          <form method="get">
+              {{myFilter.form}}
+
+              <button class ="btn btn-primary" type="submit">Search</button>
+          </form>
+      </div>
+   </div> 
+</div>  
+<br>

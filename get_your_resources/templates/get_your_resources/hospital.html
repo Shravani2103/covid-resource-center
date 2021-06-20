@@ -1,0 +1,60 @@
+{% extends 'get_your_resources/main.html' %}
+
+{% block content %}
+
+<br>
+<h2 style="color:rgb(237, 237, 243)"><center>HOSPITAL DETAILS</center></h2>
+<div class="row">
+   <div class="col-sm-4">    
+       <div class="card text-white bg-secondary mb-3" style="max-width: 144rem; padding:0 10px;">
+           <div class="card-header">Total Slots for Vaccine</div>
+            <div class="card-body">
+                <p>{{x}}</p>
+               <h4 class="card-title"></h4>
+               <p class="card-text"></p>
+            </div>
+       </div>
+   </div>
+</div>
+<br>
+<div class= "row">
+    <div class = "col">
+        <div class="card card-body">
+
+            <form method="get">
+                {{myFilter.form}}
+
+                <button class ="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+     </div> 
+</div>  
+<br>
+<div class= "row">
+    <div class = "col-md-12">
+        <hr>
+        <div class ="card card-body">
+            <a><center>HOSPITALS</center></a>
+            <table class="table table-striped">
+                <tr class = "table-info">
+                    <th scope ="row"></th>
+                    <th> Details </th>
+                    <th>Hospital Name</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                </tr>
+                {% for h_res in hospitals %}
+                    <tr>
+                        <th>         </th>
+                        <td><a href="{% url 'h_res' h_res.id %}">View</a></td>
+                         <th> {{h_res.H_name}}</th>
+                         <th> {{h_res.Area_id}}</th>
+                         <th> {{h_res.H_ph_no}}</th>
+
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>  
+{% endblock %}
